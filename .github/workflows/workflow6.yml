@@ -1,0 +1,13 @@
+name: workflow6
+
+on: [push]
+    
+
+jobs:
+  auth:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          curl -H "Authorization: Bearer ${{ secrets.MY_SECRET }}" \
+               https://www.google.com/
